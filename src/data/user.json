@@ -1,0 +1,6 @@
+{
+    "users": [{
+        "email": "admin@angularjs.org",
+        "password": "123456"
+    }]
+}

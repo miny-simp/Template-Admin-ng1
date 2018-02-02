@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="login-form-container">
+            <h3 class="center-block sys-title">NiceFish后台管理系统（Angular 1.6.4版）</h3>
+            <form name="loginForm" ng-submit="$ctrl.doLogin()" novalidate class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" placeholder="请输入邮箱" ng-model="$ctrl.user.email" required>
+                        <div ng-show="loginForm.email.$error.required" class="text-danger">用户名必须输入！</div>
+                        <div ng-show="loginForm.email.$error.email" class="text-danger">用户名不是正确的邮箱格式！</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" placeholder="请输入密码" ng-model="$ctrl.user.password" required ng-minlength="6">
+                        <div ng-show="loginForm.password.$error.required" class="text-danger">密码必须输入！</div>
+                        <div ng-show="loginForm.password.$error.minlength" class="text-danger">密码最小长度为6！</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div ng-show="$ctrl.isLoginError" class="text-danger">邮箱或密码错误！</div>
+                        <p>默认账号：admin@angularjs.org 密码：123456</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="$ctrl.user.rememberMe">记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success" ng-disabled="!loginForm.$valid">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
